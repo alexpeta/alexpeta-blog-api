@@ -1,7 +1,7 @@
 {
-  "name": "typescript-node-api",
+  "name": "alexpeta-blog-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple RESTfull api that will power my next gen blog.",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec --compilers ts:ts-node/register tests/**/*.test.ts",

@@ -1,0 +1,20 @@
+[
+	{
+		"ArticleId":1,
+		"Title":"The First Article",
+		"PermaLink": "",
+		"Text": "http://www.alexpeta.ro/article/my-first-article/', '<p>   Its good to be on the blogosphere. I&#39;ve been waiting for this moment for <strike>quite some time</strike> over two years now, and its finally good to be virtually present.</p>  <p>   I&#39;ve allways wanted to be apart of the online family, although im sure that one day&nbsp; the <a href=\"http://www.hanselman.com/blog/410GoneThoughtsOnMarkDiveintomarkPilgrimsAndWhysInfosuicides.aspx\">excitement will fade away</a>.</p>  <p>   So, enough for the first post now, its been exhausting.</p>  <p>   &nbsp;</p> ",
+		"IsPublished": true,
+		"CreatedDate": "2011-10-12T00:00:00.000Z",
+		"AllowComment": true
+	},
+	{
+		"ArticleId":2,
+		"Title":"The Blog Is Live",
+		"PermaLink": "",
+		"Text": "<p>   So i&#39;ve been coding for the last 2 weeks in my spare time&nbsp; between work and hitting the gym at this blog that you are seeing right now, but this is still very much a work-in-progress.</p>  <p>   I&#39;ve allways been a fan of the .NET platform ,and my interest lately is <a href=\"http://asp.net/mvc\">ASP MVC</a>. I absolutely love it, and the first step in doing so is coding my own small scale blog CMS.</p>  <p>   As you can probably tell im kind of a&nbsp; &quot;designely challenged&quot; person if i can say so and because i can&#39;t afford buying a good blog design right now, i&#39;ve googled some free templates, filtered them out and chose this black - greenish one. I&#39;ve left the credits and the footer intact and i dont claim this as being my own concoction.</p>  <p>   As for the code itself, i&#39;ve focused just on the main functionality used LINQ2SQL  although last week , after going to a <a href=\"http://ronua.ro\">RONUA</a> conference , i&#39;ve learnead that MSF doesnt&nbsp;continue to develop&nbsp;Linq anymore just do only the bugfixing, instead going for <a href=\"http://en.wikipedia.org/wiki/ADO.NET_Entity_Framework\">Entity Framework </a>as their <a href=\"http://en.wikipedia.org/wiki/Object-relational_mapping\">ORM</a> implementation  and the basic CRUD operations in the backend Admin, and simple operation in the front end design.</p>  <p>   Im leaving all the jQuery goodness, efects and magic&nbsp; for as the last thing on the&nbsp; <a href=\"http://msdn.microsoft.com/en-us/library/zce12xx2%28v=vs.80%29.aspx\">// TODO :</a> &nbsp;list.</p>",
+		"IsPublished": true,
+		"CreatedDate": "2011-10-22T00:00:00.000Z",
+		"AllowComment": true
+	}
+]

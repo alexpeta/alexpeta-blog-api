@@ -1,10 +1,10 @@
-import heroRouter from './routes/HeroRouter';
+import articleRouter from './routes/ArticleRouter';
 import * as path from 'path';
 import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
 
-import Repository from './Repository';
+import ArticleRepository from './ArticleRepository';
 
 // Creates and configures an ExpressJS web server.
 class App {
@@ -32,13 +32,8 @@ class App {
       });
     });
 
-    router.get('/seed', (req, res, next) => {
-        Repository.Seed();
-        res.status(200)
-          .send({ message: 'Success', status: res.status });
-    });
     this.express.use('/', router);
-    this.express.use('/api/v1/heroes', heroRouter);
+    this.express.use('/api/v1/articles', articleRouter);
   }
 }
 
