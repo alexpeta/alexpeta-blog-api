@@ -1,5 +1,5 @@
 import {Router, Request, Response, NextFunction} from 'express';
-import * as repo from '../ArticleRepository';
+import * as repo from '../repositories/ArticleRepository';
 
 export class ArticleRouter
 {

@@ -1,23 +1,19 @@
-import articleRouter from './routes/ArticleRouter';
 import * as path from 'path';
 import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
+import articleRouter from '../routes/ArticleRouter';
+import ArticleRepository from '../repositories/ArticleRepository';
 
-import ArticleRepository from './ArticleRepository';
+export class ExpressAppProvider {
+  private express: express.Application;
 
-// Creates and configures an ExpressJS web server.
-class App {
-  public express: express.Application;
-
-  //Run configuration methods on the Express instance.
   constructor() {
     this.express = express();
     this.initializeMiddleware();
     this.initializeRoutes();
   }
 
-  // Configure Express middleware.
   private initializeMiddleware(): void {
     this.express.use(logger('dev'));
     this.express.use(bodyParser.json());
@@ -27,14 +23,15 @@ class App {
   private initializeRoutes(): void {
     let router = express.Router();
     router.get('/', (req, res, next) => {
-      res.json({
-        message: 'Hello World!'
-      });
+      res.status(200).send({ message: 'success' });
     });
 
     this.express.use('/', router);
     this.express.use('/api/v1/articles', articleRouter);
   }
-}
 
-export default new App().express;
+  public getExpressInstance(): express.Application
+  {
+    return this.express;
+  }
+}
