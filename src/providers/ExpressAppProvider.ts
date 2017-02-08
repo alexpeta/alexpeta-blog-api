@@ -35,3 +35,5 @@ export class ExpressAppProvider {
     return this.express;
   }
 }
+
+export default ExpressAppProvider

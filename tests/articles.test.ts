@@ -2,14 +2,17 @@ import * as mocha from 'mocha';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 
-import app from '../src/providers/ExpressAppProvider';
+import * as e from '../src/providers/ExpressAppProvider';
 
 chai.use(chaiHttp);
 const expect = chai.expect;
 
 describe("GET api/v1/articles", () => {
     it("responds with JSON array",() => {
-        return chai.request(app).get('/api/v1/articles')
+        let expressAppProvider = new e.ExpressAppProvider();
+        let expressApp = expressAppProvider.getExpressInstance();
+
+        return chai.request(expressApp).get('/api/v1/articles')
         .then(response => {
             expect(response.status).to.equal(200);
             expect(response).to.be.json;
@@ -27,20 +30,26 @@ describe("GET api/v1/articles", () => {
     // });
 });
 
-// describe('GET api/v1/heroes/:id', () => {
-//     it('responds with single JSON object', () => {
-//         return chai.request(app).get('/api/v1/heroes/1')
-//         .then(response => {
-//             expect(response.status).to.equal(200);
-//             expect(response).to.be.json;
-//             expect(response.body).to.be.an('object');
-//         });
-//     });
+describe('GET api/v1/heroes/:id', () => {
+    it('responds with single JSON object', () => {
+        let expressAppProvider = new e.ExpressAppProvider();
+        let expressApp = expressAppProvider.getExpressInstance();
 
-//     it('should return Luke Cage', () => {
-//         return chai.request(app).get('/api/v1/heroes/1')
-//         .then(res => {
-//             expect(res.body.hero.name).to.equal('Luke Cage');
-//     });
-//   });
-// });
+        return chai.request(expressApp).get('/api/v1/articles/1')
+        .then(response => {
+            expect(response.status).to.equal(200);
+            expect(response).to.be.json;
+            expect(response.body).to.be.an('object');
+        });
+    });
+
+    it('should return "The Blog Is Live"', () => {
+        let expressAppProvider = new e.ExpressAppProvider();
+        let expressApp = expressAppProvider.getExpressInstance();
+
+        return chai.request(expressApp).get('/api/v1/articles/2')
+        .then(res => {
+            expect(res.body.Title).to.equal('The Blog Is Live');
+         });
+    });
+});

@@ -23,12 +23,9 @@ export class ArticleRepository {
         this.loadDatabase(null);
 
         var articlesCollection = this.db.getCollection(ArticleRepository.collectionName);
-        var lokiResults = articlesCollection.find({'ArticleId':id});
+        var lokiResults = articlesCollection.findOne({'ArticleId':id});
 
-        if (lokiResults.length == 1)
-        {
-            result = <models.Article>lokiResults[0];
-        }
+        result = <models.Article>lokiResults;
 
         return result;
     }
