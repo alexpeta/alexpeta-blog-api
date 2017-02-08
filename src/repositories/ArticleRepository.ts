@@ -1,6 +1,6 @@
 import * as lokijs from 'lokijs';
 import * as fs from 'fs';
-import * as models from './models/Article';
+import * as models from '../models/Article';
 
 export class ArticleRepository {
     private static collectionName: string = "articles";
